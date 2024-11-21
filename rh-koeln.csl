@@ -23,7 +23,7 @@
       <term name="et-al">u.a.</term>
       <term name="and">und</term>
       <term name="retrieved">aufgerufen am</term>
-      <term name="accessed">Zugriff:</term>
+      <term name="accessed">aufgerufen am</term>
       <term name="ibid">ebenda</term>
       <term name="page" form="short">S.</term>
       <term name="section" form="short">Abs.</term>
@@ -176,7 +176,7 @@
         </if>
         <else>
           <text macro="author-short"/>
-          <text macro="year-date" prefix=" (" suffix=")"/>
+          <text macro="year-date" prefix=", " />
           <text macro="point-locators-subsequent" prefix=", "/>
         </else>
       </choose>
@@ -198,6 +198,8 @@
       <choose>
         <if type="webpage">
           <text macro="date" prefix=". "/>
+          <text variable="URL" prefix=", "/>
+          <text macro="accessed" prefix=", "/>
         </if>
         <else-if type="speech" match="any">
           <text variable="publisher-place" prefix=", "/>
@@ -207,7 +209,7 @@
         <else-if type="article-newspaper article-magazine article-journal" match="any">
           <text value=". In: "/>
           <text variable="container-title" font-style="italic"/>
-          <text variable="collection-title" prefix=", Reihe "/>
+          <text variable="collection-title" prefix=", Reihe: "/>
           <text variable="volume" prefix=", Band "/>
           <text variable="issue" prefix=", Ausgabe "/>
           <text macro="date" prefix=", "/>
@@ -226,13 +228,6 @@
           <text variable="publisher-place" suffix=": "/>
           <text variable="publisher"/>
         </else>
-      </choose>
-      <choose>
-        <if variable="URL">
-          <text value="URL:&#160;" prefix=", "/>
-          <text variable="URL"/>
-          <text macro="accessed" prefix=" [" suffix="]"/>
-        </if>
       </choose>
       <text variable="note" prefix=", "/>
     </layout>
