@@ -219,14 +219,14 @@
           <text macro="editor" prefix=". In: " suffix=": "/>
           <text variable="container-title" font-style="italic"/>
           <text value=". "/>
-          <text variable="publisher-place" suffix=": "/>
           <text variable="publisher"/>
+          <text variable="publisher-place" prefix=", "/>
           <text macro="pages"/>
         </else-if>
         <else>
           <text value=". "/>
-          <text variable="publisher-place" suffix=": "/>
           <text variable="publisher"/>
+          <text variable="publisher-place" prefix=", "/>
         </else>
       </choose>
       <text variable="note" prefix=", "/>
